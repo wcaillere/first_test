@@ -19,12 +19,13 @@ class HomeController extends AbstractController
         if ($name == "errorPage") {
             throw $this->createNotFoundException("Test de l'errorPage");
         }
-        return new Response('<html lang="fr"><body>hello '.$name.'</body></html>');
+        return new Response('<html lang="fr"><body>hello ' . $name . '</body></html>');
     }
 
     #[Route("/twig", name: "home_twig")]
     public function testTwig(): Response
     {
-        return $this->render('testTwig.html.twig', ['word' => "Twig"]);
+        $notifications = ["a", "b", "c"];
+        return $this->render('testTwig.html.twig', ['word' => "Twig", "notifications" => $notifications]);
     }
 }

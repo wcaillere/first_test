@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="fr">
+<head>
+    <title>Premier test Twig</title>
+</head>
 <body>
 <h1>Test de {{ word }}</h1>
+
+Vous avez {{ notifications|length }} notifications.
+
+{% if (word == "test") %}
+    Hello {{ word }}
+{% endif %}
+
+{# Test d'un commentaire #}
 </body>
 </html>
